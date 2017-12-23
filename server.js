@@ -1,4 +1,5 @@
 const express = require('express');
+console.log("Hello World!");
 const app = express();
 console.log(app);
 app.get('/',(req,res)=>res.send('Hello World!'));
