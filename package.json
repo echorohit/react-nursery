@@ -1,9 +1,10 @@
 {
   "name": "react-nursery",
   "version": "1.0.0",
+  "description": "Demo project to start with react",
   "main": "index.js",
   "repository": "https://github.com/echorohit/react-nursery.git",
-  "author": "Manoj Hooda <manoj.hooda08@gmail.com>",
+  "author": "",
   "license": "MIT",
   "dependencies": {
     "html-webpack-plugin": "^2.30.1",
