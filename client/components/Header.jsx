@@ -1,5 +1,5 @@
 import React from 'react';
-import HeaderNav from './subcomponents/HeaderNav.jsx';
+import HeaderNav from './subcomponents/HeaderNav';
 export default class Header extends React.Component {
     render(){
         return (
