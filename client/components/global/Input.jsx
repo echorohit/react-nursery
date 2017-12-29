@@ -7,7 +7,7 @@ export default class Input extends React.Component {
     this.state = {
       value: this.props.value || '',
       placeholder: this.props.placeHolder || '',
-      required: this.props.RequiredField || '',
+      required: this.props.RequiredField || false,
     }
     this.handleChange = this.handleChange.bind(this);
   }

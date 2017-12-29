@@ -65,7 +65,7 @@ h1 {
 
 /*=====================*/
 /* Full-width input fields */
-.formcls input[type=text], .formcls input[type=password] {
+.formcls input[type=text], .formcls input[type=password], .formcls textarea, .formcls select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
