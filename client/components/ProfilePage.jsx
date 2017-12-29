@@ -31,7 +31,7 @@ export default class ProfilePage extends React.Component {
 				
 				<Input label='Zip Code' placeHolder="Zip Code" name="zip" RequiredField={true} />
 				
-				<SelectBox label='Country' name='country' option={["India","USA","Canada"]} placeHolder="Select Country" /><br/><br/>
+				<SelectBox label='Country' name='country' option={["India","USA","Canada"]} value="Select Country" /><br/><br/>
 				
 				
 				
