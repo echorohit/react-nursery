@@ -4,10 +4,6 @@ import PropTypes from 'prop-types';
 export default class SelectBox extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      placeholder: this.props.placeHolder || 'Select',
-    }
-    
   }
   
   render() {
@@ -18,7 +14,7 @@ export default class SelectBox extends React.Component {
            <select  
           name={this.props.name}
           onChange= {this.handleChange} >
-            <option value={this.state.placeholder}>{this.state.placeholder}</option>
+            <option value={this.props.placeHolder}>{this.props.placeHolder}</option>
             {this.props.option.map(opt=>
               <option value={opt}>{opt}</option>
             )}
@@ -32,6 +28,7 @@ export default class SelectBox extends React.Component {
 SelectBox.defaultProps = {
   clsName: 'input',
   addLabel: true,
+  placeHolder: 'Select',
   idName: ''
 };
 
