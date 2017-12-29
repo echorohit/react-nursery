@@ -5,7 +5,7 @@ export default class TextArea extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: this.props.value || 'textArea'
+      value: this.props.value || ''
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -19,14 +19,15 @@ export default class TextArea extends React.Component {
     let ele = []
     return (
         [
-			this.props.addLabel && <label>{this.props.label}</label>,
+			this.props.addLabel && <label><b>{this.props.label}</b></label>,
 			<textarea 
 			name={this.props.name}
 			rows={this.props.rows}
 			cols={this.props.cols}
 			className={this.props.clsName}
 			datadiv={this.props.datadiv}
-			> </textarea>
+			placeholder={this.props.placeHolder}
+			>{this.state.value}</textarea>
         ]
         
     );
@@ -34,8 +35,6 @@ export default class TextArea extends React.Component {
 }
 
 TextArea.defaultProps = {
-  rows: '3',
-  cols: '20',
   clsName: 'textarea',
   isDisabled: false,
   addLabel: true,
@@ -44,7 +43,6 @@ TextArea.defaultProps = {
 };
 
 TextArea.propTypes = {
-  inputType: PropTypes.string,
   name : PropTypes.string.isRequired,
   clsName: PropTypes.string,
   idName: PropTypes.string,
@@ -56,4 +54,5 @@ TextArea.propTypes = {
   label: PropTypes.string,
   value: PropTypes.string,
   datadiv: PropTypes.string,
+  placeHolder: PropTypes.string,
 }

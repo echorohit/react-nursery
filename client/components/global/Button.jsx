@@ -5,7 +5,7 @@ export default class Button extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: this.props.value || 'intial'
+      value: this.props.value || '',
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -19,14 +19,11 @@ export default class Button extends React.Component {
     let ele = []
     return (
         [
-          this.props.addLabel && 
           <button 
           type={this.props.inputType}
           name={this.props.name}
-          value={this.state.value}
-          onBlur= {this.props.onBlurCB}
-          onChange= {this.handleChange}
-        >{this.props.label}</button>
+          className={this.props.clsName}
+        >{this.state.value}</button>
         ]
         
     );
@@ -34,11 +31,8 @@ export default class Button extends React.Component {
 }
 
 Button.defaultProps = {
-  inputType: 'button',
-  clsName: 'Submitbutton',
-  isDisabled: false,
-  addLabel: true,
-  addFieldSet: true,
+  inputType: 'text',
+  clsName: 'input',
   idName: ''
 };
 
@@ -47,11 +41,5 @@ Button.propTypes = {
   name : PropTypes.string.isRequired,
   clsName: PropTypes.string,
   idName: PropTypes.string,
-  onBlurCB: PropTypes.func,
-  handleChange: PropTypes.func,
-  isDisabled: PropTypes.bool.isRequired,
-  addLabel: PropTypes.bool,
-  addFieldSet: PropTypes.bool,
-  label: PropTypes.string,
   value: PropTypes.string
 }
