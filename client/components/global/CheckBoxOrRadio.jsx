@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class CheckBoxOrRadio extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {
-      placeholder: this.props.placeHolder || 'Select',
-    }
+    super(props);    
   }
   
 

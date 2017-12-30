@@ -18,7 +18,6 @@ export default class SelectBox extends React.Component {
             {this.props.option.map(opt=>
               <option value={opt}>{opt}</option>
             )}
-
           </select>
         ]
     );

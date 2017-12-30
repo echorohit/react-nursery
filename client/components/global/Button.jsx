@@ -7,7 +7,6 @@ export default class Button extends React.Component {
   }
 
   render() {
-    let ele = []
     return (
         [
           <button 

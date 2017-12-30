@@ -10,10 +10,10 @@ export default class HeaderNav extends React.Component {
             <li className="nav-item">
                 <a className="nav-link" href="#">Login</a>
             </li>
-            <li className="nav-item active">
+            <li className="nav-item">
                 <a className="nav-link" href="#">Sign up</a>
             </li>
-            <li className="nav-item">
+            <li className="nav-item active">
                 <a className="nav-link" href="#">Profile</a>
             </li>
             <li className="nav-item">
