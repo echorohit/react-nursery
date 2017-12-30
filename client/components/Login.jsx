@@ -2,8 +2,16 @@ import React from 'react';
 import Input from './global/Input';
 import Button from './global/Button';
 import CheckBoxOrRadio from './global/CheckBoxOrRadio';
+import SelectBox from './global/SelectBox'
+
+const options = [
+	{1: "one"},
+	{2: "two"},
+];
 
 export default class Login extends React.Component {
+
+	
     render(){
         return (
             <main role="main" className="col-sm-9 ml-sm-auto col-md-10 pt-3">
@@ -16,6 +24,7 @@ export default class Login extends React.Component {
 				<div className="clearfix">
 				  <Button inputType="submit" clsName="signupbtn" value="Login" name="login" />
 				</div>
+				<SelectBox name="state" option={[1,2]}/>
 			  </div>
 			</form>
           </main>
