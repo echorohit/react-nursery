@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class CheckBoxOrRadio extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {
-      placeholder: this.props.placeHolder || 'Select',
-	  required: this.props.RequiredField || false,
-    }
+    super(props);    
   }
   
 
@@ -17,13 +13,12 @@ export default class CheckBoxOrRadio extends React.Component {
         [
           this.props.addLabel && <label><b>{this.props.label}</b>&nbsp;</label>, this.props.option.map(val => 
             <span><input 
-					type={this.props.inputType}
-					name={this.props.name}
-					className={this.props.clsName}
-					// checked={this.state.isChecked.indexOf(val) > -1}
-					value={val}
-					onChange={this.controlFunc}
-					required={this.state.required}
+				  type={this.props.inputType}
+				  name={this.props.name}
+				  className={this.props.clsName}
+				  // checked={this.state.isChecked.indexOf(val) > -1}
+				  value={val}
+          onChange={this.controlFunc} 
 				  /> {val} </span>
           ),<br/>
         ]

@@ -31,5 +31,5 @@ Button.propTypes = {
   name : PropTypes.string.isRequired,
   clsName: PropTypes.string,
   idName: PropTypes.string,
-  value: PropTypes.string
+  value: PropTypes.string.isRequired
 }
