@@ -5,7 +5,9 @@ export default class Input extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: this.props.value || 'intial'
+      value: this.props.value || '',
+      placeholder: this.props.placeHolder || '',
+      required: this.props.RequiredField || false,
     }
     this.handleChange = this.handleChange.bind(this);
   }
@@ -19,16 +21,17 @@ export default class Input extends React.Component {
     let ele = []
     return (
         [
-          this.props.addLabel && <label>{this.props.label}</label>,
+          this.props.addLabel && <label><b>{this.props.label}</b></label>,
           <input 
           type={this.props.inputType}
           name={this.props.name}
           value={this.state.value}
+          required={this.state.required}
+          placeholder={this.state.placeholder}
           onBlur= {this.props.onBlurCB}
           onChange= {this.handleChange}
         />
         ]
-        
     );
   }
 }
@@ -49,8 +52,10 @@ Input.propTypes = {
   idName: PropTypes.string,
   onBlurCB: PropTypes.func,
   isDisabled: PropTypes.bool.isRequired,
+  RequiredField: PropTypes.bool,
   addLabel: PropTypes.bool,
   addFieldSet: PropTypes.bool,
   label: PropTypes.string,
+  placeHolder: PropTypes.string,
   value: PropTypes.string
 }
