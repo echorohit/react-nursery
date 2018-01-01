@@ -3,7 +3,7 @@ export default class TableRow extends React.Component {
     abc(){
         let rows = [];
         for(let i=0;i<10;i++){
-            rows.push(<tr>
+            rows.push(<tr key={"r" + i}>
                 <td>1,001</td>
                 <td>Lorem</td>
                 <td>ipsum</td>

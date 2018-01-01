@@ -1,6 +1,7 @@
 import React from 'react';
 import TableHeader from './subcomponents/TableHeader.jsx';
 import TableRow from './subcomponents/TableRow.jsx';
+import Header from './Header' 
 export default class MainContent extends React.Component {
     render(){
         return (
