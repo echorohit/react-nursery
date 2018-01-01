@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 export default class Input extends React.Component {
   constructor(props) {
-    super(props);
+    console.log(props);
+	super(props);
     this.state = {
       value: this.props.value || '',
       placeholder: this.props.placeHolder || '',
