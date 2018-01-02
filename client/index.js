@@ -2,11 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App.jsx';
 import { BrowserRouter } from 'react-router-dom'
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux'
 import demoApp from './reducers';
+import {createLogger} from 'redux-logger'
 
-let store = createStore(demoApp);
+const logger = createLogger({
+});
+
+let store = createStore(demoApp, applyMiddleware(logger));
 
 
 ReactDOM.render(
