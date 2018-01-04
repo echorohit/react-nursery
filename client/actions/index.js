@@ -61,3 +61,9 @@ export const toggleTodo = id => {
     id
   }
 }
+export const changeBground = text=> {
+	return {
+		type: 'CHANGE_BG',
+		text
+	}
+}

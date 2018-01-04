@@ -11,13 +11,12 @@ const logger = createLogger({
 });
 
 let store = createStore(demoApp, applyMiddleware(logger));
-
-
+console.log(store);
 ReactDOM.render(
   <Provider store={store}> 
     <BrowserRouter>  
       <App />
-    </BrowserRouter>  
+    </BrowserRouter>
   </Provider>
 , 
 document.getElementById('root'));
