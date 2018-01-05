@@ -4,13 +4,14 @@ import App from './App.jsx';
 import { BrowserRouter } from 'react-router-dom'
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux'
+import thunk from "redux-thunk";
 import demoApp from './reducers';
 import {createLogger} from 'redux-logger'
 
 const logger = createLogger({
 });
 
-let store = createStore(demoApp, applyMiddleware(logger));
+let store = createStore(demoApp, applyMiddleware(thunk,logger));
 
 
 ReactDOM.render(

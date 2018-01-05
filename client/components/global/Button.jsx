@@ -8,14 +8,15 @@ export default class Button extends React.Component {
 
   render() {
     return (
-        [
-          <button 
-          type={this.props.inputType}
-          name={this.props.name}
-          className={this.props.clsName}
-        >{this.props.value}</button>
-        ]
-        
+    <button 
+      type={this.props.inputType} 
+      name={this.props.name} 
+      className={this.props.clsName}
+      onClick={this.props.onClickHandler}
+    >
+      {this.props.value}
+
+    </button>
     );
   }
 }

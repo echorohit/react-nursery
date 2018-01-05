@@ -2,62 +2,46 @@ import * as types from './actionTypes';
 import axios from 'axios';
 
 
-function requestData() {
-	return {type: types.REQ_DATA}
+function requestData(actionType) {
+	return {type: actionType + types.REQ_DATA}
 };
 
-function receiveData(json) {
+function receiveData(actionType, json) {
 	return{
-		type: types.RECV_DATA,
+		type: actionType + types.RECV_DATA,
 		data: json
 	}
 };
 
-function receiveError(json) {
+function receiveError(actionType, json) {
 	return {
-		type: types.RECV_ERROR,
+		type: actionType + types.RECV_ERROR,
 		data: json
 	}
 };
 
 
-export function fetchData(url) {
+export function fetchData(url, actionType, method, params ) {
 	return function(dispatch) {
-		dispatch(requestData());
-		return axios({
+		dispatch(requestData(actionType));
+
+		let config = {
 			url: url,
+			method: method || 'get',
 			timeout: 20000,
-			method: 'get',
-			responseType: 'json'
-		})
+			responseType: 'json',
+			data: params
+		}
+
+
+		return axios(config)
 			.then(function(response) {
-				dispatch(receiveData(response.data));
+				dispatch(receiveData(actionType, response.data));
 			})
 			.catch(function(response){
-				dispatch(receiveError(response.data));
+				dispatch(receiveError(actionType, response.data));
 			})
 	}
 };
 
-let nextTodoId = 0
-export const addTodo = text => {
-  return {
-    type: 'ADD_TODO',
-    id: nextTodoId++,
-    text
-  }
-}
 
-export const setVisibilityFilter = filter => {
-  return {
-    type: 'SET_VISIBILITY_FILTER',
-    filter
-  }
-}
-
-export const toggleTodo = id => {
-  return {
-    type: 'TOGGLE_TODO',
-    id
-  }
-}
